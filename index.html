@@ -1,0 +1,314 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="./tailwind.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+    body {
+      font-family: "Montserrat";
+    }
+  </style>
+</head>
+
+<body class="bg-[#f6f7fb]">
+  <style>
+    .menuItems {
+      left: 0;
+    }
+  </style>
+  <header>
+    <nav class="bg-[#fefefe] h-16 shadow-lg w-full pr-4">
+      <div id="menuItems"
+        class="h-content pb-10 flex flex-col gap-[1rem] menuItems bg-[#fefefe] w-[300px] absolute duration-300 overflow-y-auto rounded-l-2xl shadow-2xl"
+        style="scrollbar-width: none; -ms-overflow-style: none">
+        <div class="px-3 py-2 flex justify-between items-center flex-row bg-gray-900">
+          <div class="flex justify-center items-center gap-[1vw]">
+            <div class="">
+              <img src="./G_logo.png" class="w-12 h-12 bg-white rounded-2xl" alt="" srcset="" />
+            </div>
+            <h1 class="text-white font-poppins">
+              <strong>GURU</strong> able
+            </h1>
+          </div>
+          <ion-icon name="close"
+            class="text-white text-2xl border border-1 border-slate-500 p-2 rounded-lg hover:border-slate-200"
+            id="menuIcon"></ion-icon>
+        </div>
+
+        <div class="px-3 flex gap-[1rem]">
+          <img src="./compressed.jpg" class="w-12 h-12 object-cover" alt="" srcset="" />
+          <div class="text-black text-start">
+            <h1 class="font-bold">John Doe</h1>
+            <h2 class="text-slate-600">
+              UX Designer
+              <ion-icon name="caret-down-outline" class="hover:text-gray-900"></ion-icon>
+            </h2>
+          </div>
+        </div>
+
+        <div class="px-3 relative">
+          <input type="search" class="focus:outline-none p-1 rounded-md w-[80%] border border-1 border-slate-300"
+            placeholder="Search..." id="" />
+          <ion-icon name="search-outline" class="text-2xl absolute bottom-1 right-20 text-slate-500"></ion-icon>
+        </div>
+
+        <div class="px-3 space-y-2">
+          <p class="text-slate-500">Layout</p>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer hover:bg-slate-200 duration-100">
+            <span class="mr-2"><ion-icon title="Dashboard" class="text-white text-2xl bg-blue-500 rounded-sm p-1"
+                name="home-outline"></ion-icon></span>DahBoard
+          </h1>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer">
+            <span class="mr-2"><ion-icon title="Components" class="text-white text-2xl bg-red-500 rounded-sm p-1"
+                name="grid-outline"></ion-icon></span>Components
+          </h1>
+        </div>
+
+        <div class="px-3 space-y-2">
+          <p class="text-slate-500">Forms & Tables</p>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer">
+            <span class="mr-2"><ion-icon title="Form Components" class="text-white text-2xl bg-blue-500 rounded-sm p-1"
+                name="newspaper-outline"></ion-icon></span>Form Components
+          </h1>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer">
+            <span class="mr-2"><ion-icon title="Tables" class="text-white text-2xl bg-red-500 rounded-sm p-1"
+                name="copy-outline"></ion-icon></span>Basic Tables
+          </h1>
+        </div>
+
+        <div class="px-3 space-y-2">
+          <p class="text-slate-500">Chart & Maps</p>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer">
+            <span class="mr-2"><ion-icon title="Charts" class="text-white text-2xl bg-blue-500 rounded-sm p-1"
+                name="stats-chart-outline"></ion-icon></span>Charts
+          </h1>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer">
+            <span class="mr-2"><ion-icon class="text-white text-2xl bg-red-500 rounded-sm p-1" title="Maps"
+                name="navigate-circle-outline"></ion-icon></span>Maps
+          </h1>
+          <h1 class="flex items-center hover:bg-slate-200 duration-100 cursor-pointer">
+            <span class="mr-2"><ion-icon title="Pages" class="text-white text-2xl bg-green-500 rounded-sm p-1"
+                name="grid-outline"></ion-icon></span>
+            Pages
+          </h1>
+        </div>
+      </div>
+
+      <div class="flex w-full justify-end items-center gap-[2vw] p-2">
+        <ion-icon name="notifications-outline" class="text-2xl hover:text-gray-900"></ion-icon>
+        <img src="./compressed.jpg" class="h-12 w-12 object-cover" alt="my_image" />
+        <p class="text-slate-500">
+          John Doe
+          <span><ion-icon name="caret-down-outline" class="hover:text-gray-900"></ion-icon></span>
+        </p>
+      </div>
+    </nav>
+  </header>
+
+  <div class="flex flex-col md:flex-row max-w-screen gap-[2rem] mt-8 mr-8" id="topDiv">
+    <div
+      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200">
+      <div class="p-2 flex justify-between relative">
+        <div>
+          <ion-icon name="pie-chart-outline"
+            class="text-3xl text-white bg-blue-500 p-2 rounded-lg absolute bottom-8"></ion-icon>
+        </div>
+        <div class="text-center">
+          <p class="text-blue-500">Use space</p>
+          <h1 class="font-medium">49/50GB</h1>
+        </div>
+      </div>
+      <p class="text-xs mt-2 ml-4 flex items-center"><ion-icon name="warning-outline"
+          class="text-xl text-blue-500 mr-2"></ion-icon>Get more space
+      </p>
+    </div>
+    <div
+      class="min-w-[150px] flex flex-col flex-wrap h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200">
+      <div class="p-2 flex justify-between relative">
+        <div>
+          <ion-icon name="arrow-up"
+            class="text-3xl text-white bg-[#fc6083] p-2 rounded-lg absolute bottom-8"></ion-icon>
+        </div>
+        <div class="text-center">
+          <p class="text-[#fc6083]">Revenue</p>
+          <h1 class="font-medium">$23,589</h1>
+        </div>
+      </div>
+      <p class="text-xs mt-2 ml-4 flex items-center"><ion-icon name="calendar-outline"
+          class="text-xl text-[#fc6083] mr-2"></ion-icon>Get more
+        space</p>
+    </div>
+    <div
+      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200">
+      <div class="p-2 flex justify-between relative">
+        <div>
+          <ion-icon name="alert-circle"
+            class="text-3xl text-white bg-[#91be52] p-2 rounded-lg absolute bottom-8"></ion-icon>
+        </div>
+        <div class="text-center">
+          <p class="text-[#91be52]">Fixed issue</p>
+          <h1 class="font-medium">45</h1>
+        </div>
+      </div>
+      <p class="text-xs mt-2 ml-4 flex items-center"><ion-icon name="pricetag"
+          class="text-xl text-[#91be52] mr-2"></ion-icon>Tracked via
+        microsoft</p>
+    </div>
+    <div
+    class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200 sm:max-md:overflow-y-scroll">
+    <div class="p-2 flex justify-between relative">
+        <div>
+          <ion-icon name="logo-twitter"
+            class="text-3xl text-white bg-[#ffb449] p-2 rounded-lg absolute bottom-8"></ion-icon>
+        </div>
+        <div class="text-center">
+          <p class="text-[#ffb449]">Followers</p>
+          <h1 class="font-medium">+562</h1>
+        </div>
+      </div>
+      <p class="text-xs mt-2 ml-4 flex items-center"><ion-icon name="refresh"
+          class="text-xl text-[#ffb449] mr-2"></ion-icon>Just update</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row max-w-screen gap-[1.5rem] mt-8 mr-8" id="bottomDiv">
+    <div class="pl-8 pt-8 sm:h-[400px] sm:w-[40rem] md:w-[40rem] flex-2 shadow-xl rounded-md mx-auto">
+      <h2 class="text-xl font-medium mb-4">Statistics</h2>
+      <canvas id="myChart" class="w-screen h-full overflow-x-scroll flex items-center justify-center"></canvas>
+    </div>
+  
+    <div class="flex-1 flex gap-[1.5rem] flex-col sm:mr-4 w-full mx-auto">
+      <div class="h-28 min-w-72 flex-grow hover:scale-[1.05] duration-200">
+        <div class="flex gap-[1rem] p-2 bg-[#4e6dbc]">
+          <div>
+            <ion-icon name="logo-facebook" class="text-4xl text-white rounded-3xl"></ion-icon>
+          </div>
+          <div class="text-white text-sm">
+            <p class="font-medium">facebook</p>
+            <p>blog page timeline</p>
+          </div>
+        </div>
+        <div class="flex justify-evenly items-center p-2 shadow-xl border border-1">
+          <div class="text-center">
+            <h1 class="font-medium">23</h1>
+            <p class="text-sm text-slate-500">Active</p>
+          </div>
+          <div class="w-[.1rem] h-12 border border-1 border-slate-300"></div>
+          <div class="text-center">
+            <h1 class="font-medium">23</h1>
+            <p class="text-sm text-slate-500">Comment</p>
+          </div>
+        </div>
+      </div>
+      <div class="h-28 min-w-72 flex-grow hover:scale-[1.05] duration-200">
+        <div class="flex gap-[1rem] p-2 bg-[#f278a7]">
+          <div>
+            <img src="./dribbble_logo.png" class=" h-10 w-10 text-4xl text-white rounded-full" alt="" srcset="">
+          </div>
+          <div class="text-white text-sm">
+            <p class="font-medium">dribble</p>
+            <p>product page analysis</p>
+          </div>
+        </div>
+        <div class="flex justify-evenly items-center p-2 shadow-xl border border-1">
+          <div class="text-center">
+            <h1 class="font-medium">23</h1>
+            <p class="text-sm text-slate-500">Live</p>
+          </div>
+          <div class="w-[.1rem] h-12 border border-1 border-slate-300"></div>
+          <div class="text-center">
+            <h1 class="font-medium">23</h1>
+            <p class="text-sm text-slate-500">Message</p>
+          </div>
+        </div>
+      </div>
+      <div class="h-28 min-w-72 flex-grow hover:scale-[1.05] duration-200">
+        <div class="flex gap-[1rem] p-2 bg-sky-400">
+          <div>
+            <ion-icon name="logo-twitter" class="p-1 bg-sky-500 text-3xl text-white rounded-full"></ion-icon>
+          </div>
+          <div class="text-white text-sm">
+            <p class="font-medium">twitter</p>
+            <p>current new timeline</p>
+          </div>
+        </div>
+        <div class="flex justify-evenly items-center p-2 shadow-xl border border-1">
+          <div class="text-center">
+            <h1 class="font-medium">25</h1>
+            <p class="text-sm text-slate-500">tweet</p>
+          </div>
+          <div class="w-[.1rem] h-12 border border-1 border-slate-300"></div>
+          <div class="text-center">
+            <h1 class="font-medium">450+</h1>
+            <p class="text-sm text-slate-500">Follower</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+  <script>
+    const topDiv = document.getElementById("topDiv");
+    const bottomDiv = document.getElementById("bottomDiv");
+    const menu = document.getElementById("menuItems");
+    const rect = menu.getBoundingClientRect();
+    console.log(rect.left + " " + rect.right);
+    topDiv.classList.add("ml-[" + (rect.right + 20) + "]");
+    bottomDiv.classList.add("ml-[" + (rect.right + 20) + "]");
+    const menuBtn = document.getElementById("menuIcon");
+
+    menuBtn.addEventListener("click", function () {
+      if (menuBtn.name === "close") {
+        menu.style.left = "calc(-300px + 60px)";
+      } else {
+        menu.style.left = "0px";
+      }
+      menuBtn.name = menuBtn.name === "menu" ? "close" : "menu";
+
+      const rect = menu.getBoundingClientRect();
+      topDiv.className = topDiv.className.replace(/\bml-\S+/g, "");
+      bottomDiv.className = bottomDiv.className.replace(/\bml-\S+/g, "");
+
+      if (rect.right == 300) {
+        topDiv.classList.add("ml-[80px]");
+        bottomDiv.classList.add("ml-[80px]");
+      } else {
+        topDiv.classList.add("ml-[320px]");
+        bottomDiv.classList.add("ml-[320px]");
+      }
+    });
+
+    const xValues = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', ''];
+    const yValues = [, 1, 1.8, 1, 1.5, 0.5, 2.8, 5.3, 0.8, 3.2,];
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0.4,
+          backgroundColor: "rgba(0,0,255,1.0)",
+          borderColor: "#4e8ccc",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 0, max: 6, stepSize: 0.5 } }]
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
