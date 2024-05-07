@@ -9,7 +9,7 @@
 
     body {
       font-family: "Montserrat";
-      scrollbar-width: none; 
+      scrollbar-width: none;
       -ms-overflow-style: none
     }
   </style>
@@ -24,7 +24,7 @@
   <header>
     <nav class="bg-[#fefefe] h-16 shadow-lg w-full pr-4">
       <div id="menuItems"
-        class="h-content pb-10 flex flex-col gap-[1rem] menuItems bg-[#fefefe] w-[300px] absolute duration-300 shadow-xl">
+        class="z-10 h-content pb-10 flex flex-col gap-[1rem] menuItems bg-[#fefefe] w-[300px] absolute duration-300 shadow-xl">
         <div class="px-3 py-2 flex justify-between items-center flex-row bg-gray-900 rounded-tl-2xl">
           <div class="flex justify-center items-center gap-[1vw]">
             <div class="">
@@ -159,8 +159,8 @@
         microsoft</p>
     </div>
     <div
-    class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-xl border border-1 hover:scale-[1.05] duration-200 sm:max-md:overflow-y-scroll">
-    <div class="p-2 flex justify-between relative">
+      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-xl border border-1 hover:scale-[1.05] duration-200">
+      <div class="p-2 flex justify-between relative">
         <div>
           <ion-icon name="logo-twitter"
             class="text-3xl text-white bg-[#ffb449] p-2 rounded-lg absolute bottom-8"></ion-icon>
@@ -175,13 +175,16 @@
     </div>
   </div>
 
-  <div class="flex flex-col md:flex-row max-w-screen gap-[1.5rem] mt-8 mr-8overflow-x-scroll md:overflow-x-none" style="scrollbar-width: none; -ms-overflow-style: none; overflow-x: auto;" id="bottomDiv">
-    <div class="pl-8 pt-8 sm:h-[400px] sm:w-[40rem] md:w-[40rem] flex-2 shadow-xl rounded-md mx-auto">
+  <div class="flex flex-col md:flex-row max-w-screen gap-[1.5rem] ml-10 mt-8 mr-8" id="bottomDiv">
+    <div class="overflow-x-scroll sm:overflow-x-none shadow-xl grow"
+      style="scrollbar-width: none; -ms-overflow-style: none; overflow-x: auto;">
+      <div class="pl-8 pt-8 sm:h-[400px] h-[400px] sm:w-[40rem] w-[40rem] md:w-[40rem] flex-2 rounded-md mx-auto">
         <h2 class="text-xl font-medium mb-4">Statistics</h2>
         <canvas id="myChart" class="w-full h-full"></canvas>
+      </div>
     </div>
-  
-    <div class="flex-1 flex gap-[1.5rem] flex-col w-full mx-auto">
+
+    <div class="flex-1 flex gap-[1.5rem] flex-col w-full mx-auto grow">
       <div class="h-28 md:min-w-72 w-full flex-grow hover:scale-[1.05] duration-200">
         <div class="flex gap-[1rem] p-2 bg-[#4e6dbc]">
           <div>
@@ -261,7 +264,7 @@
     const rect = menu.getBoundingClientRect();
     console.log(rect.left + " " + rect.right);
     topDiv.classList.add("ml-[" + (rect.right + 20) + "]");
-    bottomDiv.classList.add("ml-[" + (rect.right + 20) + "]");
+    bottomDiv.classList.add("md:ml-[" + (rect.right + 20) + "]");
     const menuBtn = document.getElementById("menuIcon");
 
     menuBtn.addEventListener("click", function () {
@@ -274,14 +277,14 @@
 
       const rect = menu.getBoundingClientRect();
       topDiv.className = topDiv.className.replace(/\bml-\S+/g, "");
-      bottomDiv.className = bottomDiv.className.replace(/\bml-\S+/g, "");
+      bottomDiv.className = bottomDiv.className.replace(/\bmd:ml-\S+/g, "");
 
       if (rect.right == 300) {
         topDiv.classList.add("ml-[80px]");
-        bottomDiv.classList.add("ml-[80px]");
+        bottomDiv.classList.add("md:ml-[80px]");
       } else {
         topDiv.classList.add("ml-[320px]");
-        bottomDiv.classList.add("ml-[320px]");
+        bottomDiv.classList.add("md:ml-[320px]");
       }
     });
 
@@ -305,6 +308,16 @@
         scales: {
           yAxes: [{ ticks: { min: 0, max: 6, stepSize: 0.5 } }]
         }
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth < 640) { 
+        menu.style.left = "-240px";
+      topDiv.className = topDiv.className.replace(/\bml-\S+/g, "");
+      bottomDiv.className = bottomDiv.className.replace(/\bmd:ml-\S+/g, "");
+        topDiv.classList.add("ml-[80px]");
+        bottomDiv.classList.add("md:ml-[80px]");
+        menuBtn.name = 'menu';
       }
     });
   </script>
