@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <script src="./tailwind.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
     body {
       font-family: "Montserrat";
+      scrollbar-width: none; 
+      -ms-overflow-style: none
     }
   </style>
 </head>
@@ -26,9 +24,8 @@
   <header>
     <nav class="bg-[#fefefe] h-16 shadow-lg w-full pr-4">
       <div id="menuItems"
-        class="h-content pb-10 flex flex-col gap-[1rem] menuItems bg-[#fefefe] w-[300px] absolute duration-300 overflow-y-auto rounded-l-2xl shadow-2xl"
-        style="scrollbar-width: none; -ms-overflow-style: none">
-        <div class="px-3 py-2 flex justify-between items-center flex-row bg-gray-900">
+        class="h-content pb-10 flex flex-col gap-[1rem] menuItems bg-[#fefefe] w-[300px] absolute duration-300 shadow-xl">
+        <div class="px-3 py-2 flex justify-between items-center flex-row bg-gray-900 rounded-tl-2xl">
           <div class="flex justify-center items-center gap-[1vw]">
             <div class="">
               <img src="./G_logo.png" class="w-12 h-12 bg-white rounded-2xl" alt="" srcset="" />
@@ -114,10 +111,10 @@
 
   <div class="flex flex-col md:flex-row max-w-screen gap-[2rem] mt-8 mr-8" id="topDiv">
     <div
-      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200">
+      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-xl border border-1 hover:scale-[1.05] duration-200">
       <div class="p-2 flex justify-between relative">
         <div>
-          <ion-icon name="pie-chart-outline"
+          <ion-icon name="pie-chart"
             class="text-3xl text-white bg-blue-500 p-2 rounded-lg absolute bottom-8"></ion-icon>
         </div>
         <div class="text-center">
@@ -130,7 +127,7 @@
       </p>
     </div>
     <div
-      class="min-w-[150px] flex flex-col flex-wrap h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200">
+      class="min-w-[150px] flex flex-col flex-wrap h-28 w-full rounded-lg flex-grow shadow-xl border border-1 hover:scale-[1.05] duration-200">
       <div class="p-2 flex justify-between relative">
         <div>
           <ion-icon name="arrow-up"
@@ -146,7 +143,7 @@
         space</p>
     </div>
     <div
-      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200">
+      class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-xl border border-1 hover:scale-[1.05] duration-200">
       <div class="p-2 flex justify-between relative">
         <div>
           <ion-icon name="alert-circle"
@@ -162,7 +159,7 @@
         microsoft</p>
     </div>
     <div
-    class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-2xl border border-1 hover:scale-[1.05] duration-200 sm:max-md:overflow-y-scroll">
+    class="min-w-[150px] flex flex-col h-28 w-full rounded-lg flex-grow shadow-xl border border-1 hover:scale-[1.05] duration-200 sm:max-md:overflow-y-scroll">
     <div class="p-2 flex justify-between relative">
         <div>
           <ion-icon name="logo-twitter"
@@ -178,14 +175,14 @@
     </div>
   </div>
 
-  <div class="flex flex-col md:flex-row max-w-screen gap-[1.5rem] mt-8 mr-8" id="bottomDiv">
+  <div class="flex flex-col md:flex-row max-w-screen gap-[1.5rem] mt-8 mr-8overflow-x-scroll md:overflow-x-none" style="scrollbar-width: none; -ms-overflow-style: none; overflow-x: auto;" id="bottomDiv">
     <div class="pl-8 pt-8 sm:h-[400px] sm:w-[40rem] md:w-[40rem] flex-2 shadow-xl rounded-md mx-auto">
-      <h2 class="text-xl font-medium mb-4">Statistics</h2>
-      <canvas id="myChart" class="w-screen h-full overflow-x-scroll flex items-center justify-center"></canvas>
+        <h2 class="text-xl font-medium mb-4">Statistics</h2>
+        <canvas id="myChart" class="w-full h-full"></canvas>
     </div>
   
-    <div class="flex-1 flex gap-[1.5rem] flex-col sm:mr-4 w-full mx-auto">
-      <div class="h-28 min-w-72 flex-grow hover:scale-[1.05] duration-200">
+    <div class="flex-1 flex gap-[1.5rem] flex-col w-full mx-auto">
+      <div class="h-28 md:min-w-72 w-full flex-grow hover:scale-[1.05] duration-200">
         <div class="flex gap-[1rem] p-2 bg-[#4e6dbc]">
           <div>
             <ion-icon name="logo-facebook" class="text-4xl text-white rounded-3xl"></ion-icon>
@@ -207,7 +204,7 @@
           </div>
         </div>
       </div>
-      <div class="h-28 min-w-72 flex-grow hover:scale-[1.05] duration-200">
+      <div class="md:min-w-72 w-full flex-grow hover:scale-[1.05] duration-200">
         <div class="flex gap-[1rem] p-2 bg-[#f278a7]">
           <div>
             <img src="./dribbble_logo.png" class=" h-10 w-10 text-4xl text-white rounded-full" alt="" srcset="">
@@ -229,7 +226,7 @@
           </div>
         </div>
       </div>
-      <div class="h-28 min-w-72 flex-grow hover:scale-[1.05] duration-200">
+      <div class="md:min-w-72 w-full flex-grow hover:scale-[1.05] duration-200">
         <div class="flex gap-[1rem] p-2 bg-sky-400">
           <div>
             <ion-icon name="logo-twitter" class="p-1 bg-sky-500 text-3xl text-white rounded-full"></ion-icon>
@@ -253,8 +250,10 @@
       </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="./tailwind.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script>
     const topDiv = document.getElementById("topDiv");
     const bottomDiv = document.getElementById("bottomDiv");
