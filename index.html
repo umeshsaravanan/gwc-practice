@@ -13,6 +13,12 @@
       -ms-overflow-style: none
     }
 
+    input[type="search"]::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+      display: none;
+    }
+
     .menuItems {
       left: 0;
     }
@@ -51,7 +57,7 @@
 
         <div class="px-3 relative">
           <input type="search" class="focus:outline-none p-1 rounded-md w-[80%] border border-1 border-slate-300"
-            placeholder="Search..." id="" />
+            placeholder="Search..." id="" search-clear="false" />
           <ion-icon name="search-outline" class="text-2xl absolute bottom-1 right-20 text-slate-500"></ion-icon>
         </div>
 
