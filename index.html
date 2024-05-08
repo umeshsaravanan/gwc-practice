@@ -97,14 +97,18 @@
         </div>
       </div>
 
-      <div class="flex w-full justify-end items-center gap-[2vw] p-2">
-        <ion-icon name="notifications-outline" class="text-2xl hover:text-gray-900"></ion-icon>
+      <div class="flex w-full justify-end items-center gap-[1rem] p-2">
+        <div class="relative">
+          <ion-icon name="notifications-outline" class="text-2xl hover:text-gray-500"></ion-icon>
+          <span class="absolute left-5 bottom-5 h-2 w-2 bg-red-500 rounded-full"></span>
+        </div>
         <img src="./compressed.jpg" class="h-12 w-12 object-cover" alt="my_image" />
         <p class="text-slate-500">
           John Doe
           <span><ion-icon name="caret-down-outline" class="hover:text-gray-900"></ion-icon></span>
         </p>
       </div>
+
     </nav>
   </header>
 
@@ -175,9 +179,9 @@
   </div>
 
   <div class="flex flex-col md:flex-row max-w-screen gap-[1.5rem] ml-10 mt-8 mr-8" id="bottomDiv">
-    <div class="overflow-x-scroll sm:overflow-x-none shadow-xl grow"
-      style="scrollbar-width: none; -ms-overflow-style: none; overflow-x: auto;">
-      <div class="pl-8 pt-8 sm:h-[400px] h-[400px] sm:w-[40rem] w-[40rem] md:w-[40rem] flex-2 rounded-md mx-auto">
+    <div class="overflow-x-scroll md:overflow-x-none shadow-xl grow"
+      style="scrollbar-width: none; -ms-overflow-style: none;">
+      <div class="pl-8 pt-8 sm:h-[400px] h-[400px] sm:w-[40rem] w-[40rem] md:min-w-[40rem] flex-2 rounded-md mx-auto">
         <h2 class="text-xl font-medium mb-4">Statistics</h2>
         <canvas id="myChart" class="w-full h-full"></canvas>
       </div>
@@ -261,7 +265,7 @@
     const bottomDiv = document.getElementById("bottomDiv");
     const menu = document.getElementById("menuItems");
     const rect = menu.getBoundingClientRect();
-    
+
     topDiv.classList.add("ml-[" + (rect.right + 20) + "]");
     bottomDiv.classList.add("md:ml-[" + (rect.right + 20) + "]");
     const menuBtn = document.getElementById("menuIcon");
@@ -282,8 +286,10 @@
         topDiv.classList.add("ml-[80px]");
         bottomDiv.classList.add("md:ml-[80px]");
       } else {
-        topDiv.classList.add("ml-[320px]");
-        bottomDiv.classList.add("md:ml-[320px]");
+        if (!(window.innerWidth < 640)) {
+          topDiv.classList.add("ml-[320px]");
+          bottomDiv.classList.add("md:ml-[320px]");
+        }
       }
     });
 
