@@ -12,15 +12,14 @@
       scrollbar-width: none;
       -ms-overflow-style: none
     }
-  </style>
-</head>
 
-<body class="bg-[#f6f7fb]">
-  <style>
     .menuItems {
       left: 0;
     }
   </style>
+</head>
+
+<body class="bg-[#f6f7fb] overflow-x-hidden mb-4">
   <header>
     <nav class="bg-[#fefefe] h-16 shadow-lg w-full pr-4">
       <div id="menuItems"
@@ -262,7 +261,7 @@
     const bottomDiv = document.getElementById("bottomDiv");
     const menu = document.getElementById("menuItems");
     const rect = menu.getBoundingClientRect();
-    console.log(rect.left + " " + rect.right);
+    
     topDiv.classList.add("ml-[" + (rect.right + 20) + "]");
     bottomDiv.classList.add("md:ml-[" + (rect.right + 20) + "]");
     const menuBtn = document.getElementById("menuIcon");
@@ -306,20 +305,35 @@
       options: {
         legend: { display: false },
         scales: {
-          yAxes: [{ ticks: { min: 0, max: 6, stepSize: 0.5 } }]
+          yAxes: [{
+            ticks: { min: 0, max: 6, stepSize: 0.5 },
+            gridLines: {
+
+            }
+          }],
+          xAxes: [{
+            gridLines: {
+              display: false,
+            }
+          }]
         }
       }
     });
-    window.addEventListener("resize", function () {
-      if (window.innerWidth < 640) { 
+
+    function handleResize() {
+      if (window.innerWidth < 640) {
         menu.style.left = "-240px";
-      topDiv.className = topDiv.className.replace(/\bml-\S+/g, "");
-      bottomDiv.className = bottomDiv.className.replace(/\bmd:ml-\S+/g, "");
+        topDiv.className = topDiv.className.replace(/\bml-\S+/g, "");
+        bottomDiv.className = bottomDiv.className.replace(/\bmd:ml-\S+/g, "");
         topDiv.classList.add("ml-[80px]");
         bottomDiv.classList.add("md:ml-[80px]");
         menuBtn.name = 'menu';
       }
-    });
+    }
+
+    window.addEventListener("load", handleResize);
+    window.addEventListener("resize", handleResize);
+
   </script>
 </body>
 
